@@ -152,13 +152,14 @@
             // 
             // btnEquals
             // 
+            btnEquals.BackColor = SystemColors.ButtonShadow;
             btnEquals.Font = new Font("Segoe UI", 12F);
             btnEquals.Location = new Point(165, 275);
             btnEquals.Name = "btnEquals";
             btnEquals.Size = new Size(75, 59);
             btnEquals.TabIndex = 12;
             btnEquals.Text = "=";
-            btnEquals.UseVisualStyleBackColor = true;
+            btnEquals.UseVisualStyleBackColor = false;
             btnEquals.Click += btnEquals_Click;
             // 
             // btnOne
