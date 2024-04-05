@@ -52,9 +52,11 @@
             // 
             // txtDisplay
             // 
+            txtDisplay.BackColor = SystemColors.ControlLightLight;
             txtDisplay.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDisplay.Location = new Point(3, 12);
             txtDisplay.Name = "txtDisplay";
+            txtDisplay.ReadOnly = true;
             txtDisplay.Size = new Size(448, 43);
             txtDisplay.TabIndex = 0;
             txtDisplay.Text = "0";
@@ -157,6 +159,7 @@
             btnEquals.TabIndex = 12;
             btnEquals.Text = "=";
             btnEquals.UseVisualStyleBackColor = true;
+            btnEquals.Click += btnEquals_Click;
             // 
             // btnOne
             // 
@@ -212,6 +215,7 @@
             btnDivision.TabIndex = 15;
             btnDivision.Text = "/";
             btnDivision.UseVisualStyleBackColor = true;
+            btnDivision.Click += btnDivision_Click;
             // 
             // btnSubtraction
             // 
@@ -222,6 +226,7 @@
             btnSubtraction.TabIndex = 14;
             btnSubtraction.Text = "-";
             btnSubtraction.UseVisualStyleBackColor = true;
+            btnSubtraction.Click += btnSubtraction_Click;
             // 
             // btnClear
             // 
@@ -233,6 +238,7 @@
             btnClear.TabIndex = 13;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // btnPercentage
             // 
@@ -243,6 +249,7 @@
             btnPercentage.TabIndex = 20;
             btnPercentage.Text = "%";
             btnPercentage.UseVisualStyleBackColor = true;
+            btnPercentage.Click += btnPercentage_Click;
             // 
             // btnMultiplication
             // 
@@ -253,6 +260,7 @@
             btnMultiplication.TabIndex = 19;
             btnMultiplication.Text = "x";
             btnMultiplication.UseVisualStyleBackColor = true;
+            btnMultiplication.Click += btnMultiplication_Click;
             // 
             // btnAddition
             // 
@@ -263,6 +271,7 @@
             btnAddition.TabIndex = 18;
             btnAddition.Text = "+";
             btnAddition.UseVisualStyleBackColor = true;
+            btnAddition.Click += btnAddition_Click;
             // 
             // Calculator
             // 
@@ -289,6 +298,7 @@
             Controls.Add(btnFour);
             Controls.Add(btnSeven);
             Controls.Add(txtDisplay);
+            MaximizeBox = false;
             Name = "Calculator";
             Text = "Simple Calculator";
             ResumeLayout(false);

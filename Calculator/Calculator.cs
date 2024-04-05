@@ -8,6 +8,10 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
+        private decimal valueFirst = 0.0m;
+        private decimal valueSecond = 0.0m;
+        private decimal Result = 0.0m;
+        private string Operators = "+";
         public Calculator()
         {
             InitializeComponent();
@@ -143,14 +147,88 @@ namespace Calculator
 
         private void btnPlusMinus_Click(object sender, EventArgs e)
         {
-            if(txtDisplay.Text.Contains("-"))
+            if (txtDisplay.Text.Contains("-"))
             {
-                txtDisplay.Text = txtDisplay.Text.Trim('-');   
+                txtDisplay.Text = txtDisplay.Text.Trim('-');
             }
             else
             {
-                txtDisplay.Text = "-" + txtDisplay.Text; 
+                txtDisplay.Text = "-" + txtDisplay.Text;
             }
+        }
+
+        private void btnSubtraction_Click(object sender, EventArgs e)
+        {
+            valueFirst = decimal.Parse(txtDisplay.Text);
+            txtDisplay.Clear();
+            Operators = "-";
+        }
+
+        private void btnAddition_Click(object sender, EventArgs e)
+        {
+            valueFirst = decimal.Parse(txtDisplay.Text);
+            txtDisplay.Clear();
+            Operators = "+";
+        }
+
+        private void btnDivision_Click(object sender, EventArgs e)
+        {
+            valueFirst = decimal.Parse(txtDisplay.Text);
+            txtDisplay.Clear();
+            Operators = "/";
+        }
+
+        private void btnMultiplication_Click(object sender, EventArgs e)
+        {
+            valueFirst = decimal.Parse(txtDisplay.Text);
+            txtDisplay.Clear();
+            Operators = "*";
+        }
+
+        private void btnPercentage_Click(object sender, EventArgs e)
+        {
+            valueFirst = decimal.Parse(txtDisplay.Text);
+            txtDisplay.Clear();
+            Operators = "%";
+        }
+
+        private void btnEquals_Click(object sender, EventArgs e)
+        {
+            switch (Operators)
+            {
+                case "-":
+                    valueSecond = decimal.Parse(txtDisplay.Text);
+                    Result = valueFirst - valueSecond;
+                    txtDisplay.Text = Result.ToString();
+                    break;
+                case "+":
+                    valueSecond = decimal.Parse(txtDisplay.Text);
+                    Result = valueFirst + valueSecond;
+                    txtDisplay.Text = Result.ToString();
+                    break;
+                case "*":
+                    valueSecond = decimal.Parse(txtDisplay.Text);
+                    Result = valueFirst * valueSecond;
+                    txtDisplay.Text = Result.ToString();
+                    break;
+                case "/":
+                    valueSecond = decimal.Parse(txtDisplay.Text);
+                    Result = valueFirst / valueSecond;
+                    txtDisplay.Text = Result.ToString();
+                    break;
+                case "%":
+                    valueSecond = decimal.Parse(txtDisplay.Text);
+                    Result = valueFirst % valueSecond;
+                    txtDisplay.Text = Result.ToString();
+                    break;
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            valueFirst = 0.0m;
+            valueSecond = 0.0m;
+            txtDisplay.Text = "0";
         }
     }
 }
